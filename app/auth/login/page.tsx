@@ -77,7 +77,6 @@ export default function LoginPage() {
               border: '1px solid rgba(255,255,255,0.1)',
               color: '#f0f0f0',
               borderRadius: '30px',
-              padding: '12px',
               fontSize: '1rem'
             }}
             required
@@ -95,7 +94,6 @@ export default function LoginPage() {
               border: '1px solid rgba(255,255,255,0.1)',
               color: '#f0f0f0',
               borderRadius: '30px',
-              padding: '12px',
               fontSize: '1rem'
             }}
             required
