@@ -324,8 +324,7 @@ export default function AdminPage() {
               background: '#000',
               border: '1px solid rgba(255,255,255,0.1)',
               color: '#f0f0f0',
-              borderRadius: '30px',
-              padding: '12px'
+              borderRadius: '30px'
             }}
           />
           <textarea
