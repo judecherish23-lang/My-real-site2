@@ -1,9 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
 
-// Initialize Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://nmfrvwmyvrnpmktkhwaw.supabase.co";
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "sb_publishable_ni5Ptlzp62tOZ4qK4tKFUg_M6AZNq_5";
+// Initialize Supabase client with strict string validation
+const rawUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseUrl = (rawUrl && rawUrl.startsWith('http')) ? rawUrl : "https://nmfrvwmyvrnpmktkhwaw.supabase.co";
+
+const rawKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseAnonKey = (rawKey && rawKey.length > 20) ? rawKey : "sb_publishable_ni5Ptlzp62tOZ4qK4tKFUg_M6AZNq_5";
+
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export async function POST(request: Request) {
